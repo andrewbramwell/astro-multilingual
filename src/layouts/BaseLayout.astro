@@ -26,6 +26,32 @@ const trimmedLocales = trimArrSlashes(locales);
 const trimmedPathname = trimStringSlashes(Astro.url.pathname);
 
 const isLandingPage = Astro.url.pathname === "/" || trimmedLocales.includes(trimmedPathname);
+
+// Generate Local Business Schema from client.json
+const localBusinessSchema = {
+	"@context": "https://schema.org",
+	"@type": "HealthAndBeautyBusiness",
+	"name": client.name,
+	"image": `https://${client.domain}/assets/images/logo.svg`,
+	"@id": `https://${client.domain}`,
+	"url": `https://${client.domain}`,
+	"telephone": client.phoneForTel,
+	"address": {
+		"@type": "PostalAddress",
+		"streetAddress": `${client.address.lineOne}${client.address.lineTwo ? ', ' + client.address.lineTwo : ''}`,
+		"addressLocality": client.address.city,
+		"postalCode": client.address.postcode,
+		"addressCountry": client.address.country
+	},
+	"openingHours": client.hours,
+	...(client.social && {
+		"sameAs": [
+			client.social.facebook,
+			client.social.instagram,
+			client.social.google
+		].filter(Boolean)
+	})
+};
 ---
 
 <!-- A fully fleshed-out <head>, dynamically changing based on client.json and the page front matter -->
@@ -53,6 +79,9 @@ const isLandingPage = Astro.url.pathname === "/" || trimmedLocales.includes(trim
 		<!-- automatically generates hreflang alternate links to improve SEO -->
 		<I18nHead />
 
+		<!-- Local Business Schema for SEO -->
+		<script type="application/ld+json" set:html={JSON.stringify(localBusinessSchema)} />
+
 		<!--Social Media Display-->
 		<meta property="og:title" content={title} />
 		<meta property="og:description" content={description} />
@@ -70,24 +99,13 @@ const isLandingPage = Astro.url.pathname === "/" || trimmedLocales.includes(trim
 		<meta name="theme-color" content="#ffffff" />
 
 		<!--For home page, use service keywords for the title, including location for SEO.
-        Other pages should just include the page name.
-        
-        EXAMPLE:
-        Home page - House Painting Contractors | Painters and Co. | TestCity, WA
-        About Page - About us | Painters and Co.
-        -->
+        Other pages should just include the page name.-->
+
 		<title>
 			{
 				isLandingPage
-					? `${title}
-            |
-            ${client.name}
-            |
-            ${client.address.city},
-            ${client.address.state}`
-					: `${title}
-                |
-                ${client.name}`
+					? `${title} | ${client.name} | ${client.address.city}`
+					: `${title} | ${client.name}`
 			}
 		</title>
 

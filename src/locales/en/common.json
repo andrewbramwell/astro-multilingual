@@ -1,6 +1,7 @@
 {
     "home": "Home",
     "about": "About",
+    "services": "Services",
     "projects": "Projects",
     "project-1": "Project 1",
     "project-2": "Project 2",
@@ -18,14 +19,12 @@
         "dark": "Dark",
         "auto": "Auto"
     },
-    "quote": "Get Free Quote",
-    "estimate": "Get an estimate now",
     "ctaComponent": {
-        "title": "Get it done",
-        "subtitle": "With us today",
-        "message": "Say something catchy, informative, and encouraging to click the button to go to the contact page. I like to add these to the bottom of all pages.",
-        "cta": "Get an estimate now",
-        "alt": ""
+        "topper": "CTA Section Label ",
+        "title": "SEO Optimized CTA Heading",
+        "text": "Brief compelling text encouraging action. Highlight urgency, benefits, or special offers. Keep it 1-2 sentences.",
+        "button": "Action Button Text",
+        "imageAlt": "Descriptive alt text for CTA background image"
     },
     "about-page": {
         "landing": "About",

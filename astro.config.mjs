@@ -3,33 +3,41 @@ import icon from "astro-icon";
 import i18n from "@astrolicious/i18n";
 import sitemap from "@astrojs/sitemap";
 
+// ========================================
+// MULTILINGUAL CONFIGURATION
+// Set to true for multilingual sites, false for single language
+// ========================================
+const MULTILINGUAL = true; // false for single language websites!
+
+// Language configuration
+const DEFAULT_LOCALE = "en";
+const AVAILABLE_LOCALES = MULTILINGUAL ? ["en", "de", "es", "fr"] : [DEFAULT_LOCALE]; // remove redundant languages from language switch!
+
+// Sitemap i18n config (only used if MULTILINGUAL is true)
+const SITEMAP_I18N = MULTILINGUAL ? {
+  defaultLocale: DEFAULT_LOCALE,
+  locales: {
+    en: 'en-US',
+    de: 'de-DE',
+    es: 'es-ES',
+    fr: 'fr-FR', // remove redundant languages from sitemap!
+  },
+} : undefined;
+
 export default defineConfig({
   site: "https://www.yourwebsite.com", // update me!
   integrations: [
     icon(),
     i18n({
-      defaultLocale: "en",
-      locales: ["fr", "en"],
+      defaultLocale: DEFAULT_LOCALE,
+      locales: AVAILABLE_LOCALES,
       client: {
         data: true,
         paths: true,
       },
-      // used to localize the routes
-      pages: {
-				"/about": {
-					fr: "/a-propos",
-				}
-			},
     }),
     sitemap({
-      i18n: {
-        defaultLocale: 'en', // All urls that don't contain `es` or `fr` after `"https://www.yourwebsite.com/"` will be treated as default locale, i.e. `en`
-        locales: {
-          // key/value pairs of all languages supported
-          en: 'en-US', // The `defaultLocale` value must be present in `locales` keys
-          fr: 'fr-FR',
-        },
-      },
+      ...(SITEMAP_I18N && { i18n: SITEMAP_I18N }),
     }),
   ],
 });

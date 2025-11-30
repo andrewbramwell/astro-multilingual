@@ -10,6 +10,11 @@ const navData = [
     children: []
   },
   {
+    key: "services",
+    url: "/services",
+    children: []
+  },
+  {
     key: "projects",
     children: [
       {
