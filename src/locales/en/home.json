@@ -1,4 +1,23 @@
 {
+	"_instructions": {
+	"prompt": "Fill this JSON homepage template using the provided client questionnaire. REQUIREMENTS: (1) Match the tone and positioning described in the questionnaire - extract their goals, values, and how they want to differentiate themselves. (2) Incorporate SEO keywords: [business name], [location], 'Thai massage', 'massage therapist', plus their specific treatment types. (3) Respect character limits per section. (4) Use specific details from questionnaire (years experience, qualifications, specialties, unique selling points, business goals). (5) Make content compelling and authentic to their brand vision. (6) If unclear about positioning, default to professional yet warm and welcoming tone.",
+    "character_limits": {
+      "hero.text": "150-200 chars",
+      "services.description": "150-200 chars",
+      "service[n].description": "100-120 chars",
+      "whyUs.description": "150-200 chars",
+      "whyUs.reason[n].description": "120-150 chars",
+      "about.paragraph[n]": "150-200 chars",
+      "reviews.review[n].text": "150-200 chars",
+      "faq.answer[n]": "200-250 chars"
+    },
+    "standard_ctas": {
+      "book_now": "/booking",
+      "view_services": "/services",
+      "learn_more": "/about",
+      "leave_review": "https://g.page/r/[GoogleBusinessID]/review"
+    }
+  },
 	"layout": {
 		"title": "Pixel Perfect Websites",
 		"description": "Meta description for the page"
@@ -39,7 +58,7 @@
 	},
 	"whyUs": {
 		"topper": "Why Choose Us Section Label",
-		"title": "Why Choose Us Heading Your Unique Value",
+		"title": "Why Choose Your Thai Massage",
 		"description": "Compelling description explaining what sets your business apart from competitors. Focus on expertise, quality, experience, and customer satisfaction. Keep it 2-3 sentences.",
 		"reason1": {
 		"title": "First Reason Title",
@@ -56,8 +75,8 @@
 		"testimonial": "A testimonial from a customer or a quote from the business owner"
 	},
 	"about": {
-		"topper": "About Section Label (e.g., Our Story, About Us)",
-		"title": "SEO Optimized About Heading - Who You Are",
+		"topper": "About Section ",
+		"title": "About Heading ",
 		"paragraph1": "First paragraph introducing your business, background, expertise, and what makes you unique. Focus on establishing credibility and connecting with your audience.",
 		"paragraph2": "Second paragraph elaborating on your mission, values, approach, or experience. Highlight what sets you apart and why customers should trust you.",
 		"cta": "Learn More",

@@ -48,6 +48,7 @@ const optimizedMassage2Mobile = await getImage({ src: massage2, format: 'webp', 
 @media only screen and (min-width: 0rem) {
     #sbs-r-870 {
         padding: var(--sectionPadding);
+        background-color: var(--sectionColor);
 
         .cs-container {
             width: 100%;
@@ -74,55 +75,10 @@ const optimizedMassage2Mobile = await getImage({ src: massage2, format: 'webp', 
             align-items: flex-start;
         }
 
-        .cs-title {
-            /* 17 characters wide including spaces */
-            max-width: 17ch;
-        }
-
         .cs-text {
             margin-bottom: (16/16rem);
             &:last-of-type {
                 margin-bottom: (32/16rem);
-            }
-        }
-
-        .cs-button-solid {
-            font-size: (16/16rem);
-            /* 46px - 56px */
-            line-height: clamp(2.875rem, 5.5vw, 3.5rem);
-            text-decoration: none;
-            font-weight: 700;
-            text-align: center;
-            margin: 0;
-            color: #fff;
-            min-width: (150/16rem);
-            padding: 0 (24/16rem);
-            background-color: var(--primary);
-            border-radius: (4/16rem);
-            display: inline-block;
-            position: relative;
-            z-index: 1;
-            /* prevents padding from adding to the width */
-            box-sizing: border-box;
-
-            &:before {
-                content: "";
-                position: absolute;
-                height: 100%;
-                width: 0%;
-                background: #000;
-                opacity: 1;
-                top: 0;
-                left: 0;
-                z-index: -1;
-                border-radius: (4/16rem);
-                transition: width 0.3s;
-            }
-
-            &:hover {
-                &:before {
-                    width: 100%;
-                }
             }
         }
 
@@ -133,12 +89,8 @@ const optimizedMassage2Mobile = await getImage({ src: massage2, format: 'webp', 
             max-width: (630/16rem);
             /* 400px - 775px */
             height: clamp(25rem, 70vw, 48.4375rem);
-            box-shadow: 0px 2.80579px 42.0868px rgba(0, 0, 0, 0.16);
-            /* 100px - 200px */
-            border-radius: 0 clamp(6.25rem, 17vw, 12.5rem) 0
-                clamp(6.25rem, 17vw, 12.5rem);
-            /* clips img tag corners */
             overflow: hidden;
+            .img-radius(xl);
 
             img {
                 position: absolute;
@@ -182,9 +134,7 @@ const optimizedMassage2Mobile = await getImage({ src: massage2, format: 'webp', 
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #sbs-r-870 {
-            .cs-topper {
-                color: var(--primaryLight);
-            }
+            background-color: rgba(0, 0, 0, .2);
 
             .cs-title,
             .cs-text {

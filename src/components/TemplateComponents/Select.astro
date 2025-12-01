@@ -138,4 +138,17 @@ const { width, label, icon, value, options } = Astro.props
 			padding: 1rem;
 		}
 	}
+
+	/* Header3 specific - always primary color */
+	:global(#cs-navigation[data-header="3"] .cs-settings) label {
+		color: var(--primary) !important;
+	}
+
+	:global(#cs-navigation[data-header="3"] .cs-settings) select {
+		color: var(--primary) !important;
+	}
+
+	:global(#cs-navigation[data-header="3"] .cs-settings) .icon {
+		color: var(--primary) !important;
+	}
 </style>

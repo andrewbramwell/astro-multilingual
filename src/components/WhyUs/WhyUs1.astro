@@ -170,6 +170,7 @@ const reasons = [
             margin: 0;
             box-sizing: border-box;
             border: 1px solid var(--primary);
+            .card-radius(full);
             display: flex;
             justify-content: center;
             align-items: center;
@@ -272,6 +273,7 @@ const reasons = [
                 position: absolute;
                 top: 0;
                 left: 0;
+                .img-radius(lg);
             }
         }
 
@@ -333,7 +335,7 @@ const reasons = [
 @media only screen and (min-width: 64rem) {
     #why-choose-1635 {
         /* set the darker background color on the main div */
-        background-color: #F8F5F1;
+        background-color: var(--sectionColor);
         overflow: hidden;
         
         .cs-content {
@@ -433,6 +435,5 @@ const reasons = [
             }
         }
     }
-}                               
-                                                                                            
+}                                                                                                            
 </style>

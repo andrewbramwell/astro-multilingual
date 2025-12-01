@@ -41,4 +41,18 @@ import LanguageSelect from "./LanguageSelect.astro";
             }
         }
     }
+    
+    /* Force primary color ONLY for Header3 */
+    #cs-navigation[data-header="3"] .cs-settings :global(*) {
+        color: var(--primary) !important;
+        border-color: var(--primary) !important;
+    }
+    
+    #cs-navigation[data-header="3"] .cs-settings :global(select) {
+        background-color: transparent !important;
+    }
+    
+    body.dark-mode #cs-navigation[data-header="3"] .cs-settings :global(select) {
+        background-color: var(--dark) !important;
+    }
 </style>

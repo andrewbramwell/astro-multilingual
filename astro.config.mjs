@@ -40,4 +40,13 @@ export default defineConfig({
       ...(SITEMAP_I18N && { i18n: SITEMAP_I18N }),
     }),
   ],
+  vite: {
+    css: {
+      preprocessorOptions: {
+        less: {
+          additionalData: `@import "${process.cwd()}/src/styles/config.less";`
+        }
+      }
+    }
+  }
 });

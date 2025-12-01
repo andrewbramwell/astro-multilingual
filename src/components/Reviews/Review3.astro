@@ -74,20 +74,20 @@ const reviews = [
             margin: auto;
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
+            align-items: center;
             /* 48px - 64px */
             gap: clamp(3rem, 6vw, 4rem);
         }
 
         .cs-content {
             /* set text align to left if content needs to be left aligned */
-            text-align: left;
+            text-align: center;
             width: 100%;
-            max-width: (522/16rem);
+
             display: flex;
             flex-direction: column;
             /* centers content horizontally, set to flex-start to left align */
-            align-items: flex-start;
+            align-items: center;
         }
 
         .cs-card-group {
@@ -109,7 +109,7 @@ const reviews = [
             /* 32px - 60px top & bottom */
             /* 16px - 48px left & right */
             padding: clamp(2rem, 6.15vw, 3.75rem) clamp(1rem, 4.15vw, 3rem);
-            background-color: #f1f1f4;
+            background-color: var(--sectionColor);
             /* prevents padding from adding to height and width */
             box-sizing: border-box;
             display: flex;
@@ -117,6 +117,7 @@ const reviews = [
             align-items: flex-start;
             flex-direction: column;
             position: relative;
+            .card-radius(lg);
         }
 
         .cs-stars {
@@ -174,18 +175,6 @@ const reviews = [
             font-weight: 700;
             margin: 0 0 (8/16rem) 0;
             color: var(--headerColor);
-            display: block;
-        }
-
-        .cs-job {
-            /* 13px - 16px */
-            font-size: clamp(0.8125rem, 1.6vw, 1rem);
-            line-height: 1.2em;
-            font-weight: 400;
-            text-transform: uppercase;
-            letter-spacing: 0.01em;
-            margin: 0;
-            color: var(--bodyTextColor);
             display: block;
         }
     }
@@ -246,9 +235,7 @@ const reviews = [
 @media only screen and (min-width: 0rem) {
     body.dark-mode {
         #reviews-567 {
-            .cs-topper {
-                color: var(--primaryLight);
-            }
+            background-color: rgba(0, 0, 0, .3);
             .cs-title,
             .cs-text,
             .cs-item-text,

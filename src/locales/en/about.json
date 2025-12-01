@@ -5,7 +5,7 @@
   },
   "section": {
     "topper": "About Section Label ",
-    "title": "About Page Heading ",
+    "title": "About Page  ",
     "paragraph1": "First paragraph introducing your business story, mission, and values. Explain what drives you and what makes your approach unique. Connect emotionally with your audience.",
     "paragraph2": "Second paragraph elaborating on your expertise, experience, or philosophy. Share what sets you apart and why clients should trust you with their wellbeing.",
     "paragraph3": "Third paragraph elaborating on your expertise, experience, or philosophy. Share what sets you apart and why clients should trust you with their wellbeing.",
@@ -20,7 +20,7 @@
     "title": "Our Expert Team Members",
     "member1": {
       "name": "Team Member 1 Name",
-      "job": "Role/Title (e.g., Lead Therapist, Massage Specialist)"
+      "job": "Role/Title "
     },
     "member2": {
       "name": "Team Member 2 Name",

@@ -9,6 +9,8 @@ import client from "@data/client.json";
 import { trimArrSlashes, trimStringSlashes } from "@utils/utils";
 import ThemeProvider from "@components/TemplateComponents/ThemeProvider.astro";
 import Header from "@components/Header.astro";
+import Header2 from "@components/Header2.astro";
+import Header3 from "@components/Header3.astro";
 import Footer from "@components/Footer.astro";
 import "@styles/root.less";
 
@@ -112,14 +114,28 @@ const localBusinessSchema = {
 		<!-- Dark / Light mode component -->
 		<ThemeProvider />
 
-		<!-- Navigation script -->
-		<script src="@assets/js/nav.js"></script>
+		<!-- Navigation scripts - auto-loads correct one based on header -->
+		<script>
+			// Load correct navigation script based on which header is present
+			document.addEventListener('DOMContentLoaded', () => {
+				const isHeader2 = document.querySelector('#cs-navigation[data-header="2"]');
+				const isHeader3 = document.querySelector('#cs-navigation[data-header="3"]');
+				
+				if (isHeader3) {
+					import('@assets/js/nav3.js');
+				} else if (isHeader2) {
+					import('@assets/js/nav2.js');
+				} else {
+					import('@assets/js/nav.js');
+				}
+			});
+		</script>
 	</head>
 	<body>
 		<!--Screen reader skip main nav-->
 		<a class="skip" aria-label="skip to main content" href="#main">{t("skipLink")}</a>
 
-		<Header />
+		<Header3 />
 		<main id="main">
 			<slot />
 		</main>
