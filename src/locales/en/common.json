@@ -27,15 +27,12 @@
         "button": "Action Button Text",
         "imageAlt": "Descriptive alt text for CTA background image"
     },
-    "about-page": {
-        "landing": "About",
-        "topper": "About",
-        "title": "About Company Title",
-        "p-1": "Our company was created In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.",
-        "p-2": "We believe that In consequat tincidunt turpis sit amet imperdiet. Praesent Class officelan nonatoureanor mauris laoreet, iaculis libero quis. Curabitur et tempus eri consequat tincidunt turpis sit amet imperdiet. Praesent nonatourean olei aptent taciti sociosqu ad litora torquent per.",
-        "p-3": "It's important In consequat tincidunt turpis sit amet imperdiet.",
-        "rank": "CEO-Founder",
-        "cta": "Our projects"
+    "cookiePopup": {
+        "title": "This website uses cookies",
+        "text": "This website uses cookies. By using our website you consent to all cookies in accordance with our Cookie Policy.",
+        "readMore": "Read More",
+        "policyLink": "/privacy-policy",
+        "accept": "Accept"
     },
     "footer": {
         "information": "Information",

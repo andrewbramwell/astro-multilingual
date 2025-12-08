@@ -5,11 +5,11 @@ import { getImage } from "astro:assets";
 import client from "@data/client.json";
 
 // Import image
-import massage1 from "@assets/images/massages/massage1.jpg";
+import featured1 from "@assets/images/massages/featured1.jpg";
 
 // Optimize image
-const optimizedMassage1 = await getImage({ src: massage1, format: 'webp', width: 630 });
-const optimizedMassage1Mobile = await getImage({ src: massage1, format: 'webp', width: 600 });
+const optimizedFeatured1 = await getImage({ src: featured1, format: 'webp', width: 630 });
+const optimizedFeatured1Mobile = await getImage({ src: featured1, format: 'webp', width: 600 });
 ---
 
 <!-- ============================================ -->
@@ -19,10 +19,10 @@ const optimizedMassage1Mobile = await getImage({ src: massage1, format: 'webp', 
     <div class="cs-container">
         <picture class="cs-picture">
             <!--Mobile Image-->
-            <source media="(max-width: 600px)" srcset={optimizedMassage1Mobile.src} type="image/webp" />
+            <source media="(max-width: 600px)" srcset={optimizedFeatured1Mobile.src} type="image/webp" />
             <!--Tablet and above Image-->
-            <source media="(min-width: 601px)" srcset={optimizedMassage1.src} type="image/webp" />
-            <img loading="lazy" decoding="async" src={massage1.src} alt={t("home:featured1.imageAlt")} width="630" height="775" />
+            <source media="(min-width: 601px)" srcset={optimizedFeatured1.src} type="image/webp" />
+            <img loading="lazy" decoding="async" src={featured1.src} alt={t("home:featured1.imageAlt")} width="630" height="775" />
         </picture>
         <div class="cs-content">
             <span class="cs-topper">{t("home:featured1.topper")}</span>

@@ -175,7 +175,7 @@ const services = [
                 </li>
             ))}
         </ul>
-        <a href={client.bookingUrl} class="cs-button-solid">{t("services:tiles.cta")}</a>
+        <a href={client.bookingUrl} target="_blank" rel="noopener noreferrer" class="cs-button-solid">{t("services:tiles.cta")}</a>
     </div>
 </section>
 
@@ -367,6 +367,7 @@ const services = [
             .cs-title,
             .cs-text,
             .cs-h3,
+            .cs-pricing,
             .cs-item-text {
                 color: var(--bodyTextColorWhite);
             }

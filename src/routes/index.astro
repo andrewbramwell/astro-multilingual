@@ -25,7 +25,7 @@ import Review2 from '@components/Reviews/Review2.astro';
 import Review3 from '@components/Reviews/Review3.astro';
 import FAQwithImage from '@components/FAQs/FAQwithImage.astro';
 import FAQwithImageR from '@components/FAQs/FAQwithImageR.astro';
-import CTAfullWidth from '@components/CTAs/CTAfullWidth.astro';
+import CTAFullWidth from '@components/CTAs/CTAFullWidth.astro';
 
 // Optimize our landing image and pass it as props to the BaseLayout (for preloading) and Hero (for rendering)
 import landingImage from "@assets/images/hero.jpg"; // <-- THE PATH TO THE ASSET YOU WANT TO PRELOAD - The asset must live in src
@@ -67,7 +67,7 @@ const optimizedMobileLandingImage = await getOptimizedImage(mobileLandingImage);
 
 	
 	
-<CTAfullWidth />
+<CTAFullWidth />
 
 </BaseLayout>
 
